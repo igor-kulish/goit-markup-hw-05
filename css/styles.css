@@ -111,6 +111,25 @@ img {
 .site-nav .link:focus,
 .site-nav .current {
   color: var(--accent-colour);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.site-nav .item {
+  position: relative;
+}
+
+.site-nav .current::after {
+  position: absolute;
+  transform: scaleX(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--accent-colour);
+  left: 0;
+  bottom: 0;
 }
 
 .auth-nav {
@@ -123,7 +142,6 @@ img {
 }
 
 /* *Стилизация мейла и телефона */
-
 .auth-nav .item-auth .link {
   display: flex;
   align-items: center;
@@ -135,15 +153,8 @@ img {
   margin-right: 30px;
 }
 
-.envelope {
-  width: 16px;
-  height: 12px;
-  margin-right: 10px;
-}
-
+.envelope,
 .smartphone {
-  width: 10px;
-  height: 16px;
   margin-right: 10px;
 }
 
@@ -159,6 +170,7 @@ img {
 .auth-nav .link:focus {
   color: var(--accent-colour);
   fill: var(--accent-colour);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* *Hero */
@@ -215,6 +227,57 @@ img {
 .button-hero:active {
   background-color: #188ce8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* *Модальное окно */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 9;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 528px;
+  height: 581px;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  background-color: var(--header-background-color);
+}
+
+.close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: var(--hero-addres-button-text-color);
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
 }
 
 /* *Секция Особенности */
@@ -279,6 +342,29 @@ img {
   letter-spacing: 0.03em;
 
   margin-bottom: 50px;
+}
+
+.work-list {
+  position: relative;
+}
+
+.section-work-background {
+  width: 370px;
+  height: 70px;
+  background-color: rgba(47, 48, 58, 0.8);
+  position: absolute;
+  bottom: 0;
+  padding: 27px 0;
+}
+
+.background-title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--hero-addres-button-text-color);
 }
 
 .our-team {
@@ -350,6 +436,7 @@ img {
 .cards .link:active {
   fill: #ffffff;
   background-color: #2196f3;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* *Постоянные клиенты */
@@ -387,6 +474,7 @@ img {
 .list-customers .customer-link:active {
   fill: var(--accent-colour);
   border: 1px solid var(--accent-colour);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* *Footer стилизация */
@@ -459,6 +547,7 @@ img {
 .footer-auth .link-footer:hover,
 .footer-auth .link-footer:focus {
   color: var(--accent-colour);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .join {
@@ -499,6 +588,7 @@ img {
 .join-link:focus,
 .join-link:active {
   background-color: var(--accent-colour);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* *Portfolio стилизация */
@@ -539,11 +629,41 @@ img {
   color: var(--hero-addres-button-text-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button:focus,
 .button:active {
   background-color: var(--accent-colour);
   color: var(--hero-addres-button-text-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* *Синий Оверлей */
+.card-thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-thumb-item {
+  position: absolute;
+  transform: translate(0%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 150, 243, 0.9);
+}
+
+.text-thumb {
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: var(--hero-addres-button-text-color);
+  padding: 63px 24px;
+}
+
+.card-portfolio:hover .card-thumb-item {
+  transform: translateY(-100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-project-list {
@@ -591,4 +711,5 @@ img {
 .card-portfolio:hover,
 .card-portfolio:focus {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
