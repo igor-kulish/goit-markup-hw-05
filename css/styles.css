@@ -105,6 +105,7 @@ img {
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-nav .link:hover,
@@ -164,6 +165,7 @@ img {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .auth-nav .link:hover,
@@ -220,6 +222,7 @@ img {
 
   padding: 10px 32px;
   display: inline-block;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-hero:hover,
@@ -238,7 +241,7 @@ img {
   width: 100%;
   height: 100%;
   opacity: 1;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 9;
   background-color: rgba(0, 0, 0, 0.2);
 }
@@ -251,6 +254,7 @@ img {
 
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(0.9);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal {
@@ -425,6 +429,7 @@ img {
   align-items: center;
   justify-content: center;
   fill: #afb1b8;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .list-social-networks .cards:not(:last-child) {
@@ -467,6 +472,7 @@ img {
   fill: #afb1b8;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .list-customers .customer-link:hover,
@@ -542,6 +548,7 @@ img {
   font-style: normal;
 
   display: inline-block;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-auth .link-footer:hover,
@@ -552,7 +559,6 @@ img {
 
 .join {
   margin-left: 70px;
-  /* padding-top: 12px; */
 }
 
 .join-title {
@@ -578,6 +584,7 @@ img {
   align-items: center;
   justify-content: center;
   fill: var(--hero-addres-button-text-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .join-list .list:not(:last-child) {
@@ -608,6 +615,7 @@ img {
 
   padding: 6px 22px;
   display: inline-block;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-list {
@@ -624,17 +632,13 @@ img {
   margin-right: 0;
 }
 
-.button:hover {
-  background-color: var(--accent-colour);
-  color: var(--hero-addres-button-text-color);
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+.button:hover,
 .button:focus,
 .button:active {
   background-color: var(--accent-colour);
   color: var(--hero-addres-button-text-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -661,7 +665,8 @@ img {
   padding: 63px 24px;
 }
 
-.card-portfolio:hover .card-thumb-item {
+.card-portfolio:hover .card-thumb-item,
+.card-portfolio:focus .card-thumb-item {
   transform: translateY(-100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -676,6 +681,7 @@ img {
   margin-right: 30px;
   margin-bottom: 30px;
   background-color: var(--header-background-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-title-text {
